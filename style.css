@@ -27,23 +27,21 @@ h1 {
   position: relative;
 }
 
-h1::after {
+h1::after, h1::before {
   content: '';
-  width: 95%;
-  height: 95%;
+  width: 90%;
+  height: 90%;
+  margin: 0 5%;
   border: 2px solid rgba(255,255,255,.8);
   position: absolute;
-  top: 5px;
-  left: 5px;
+  top: 0;
+  left: 0;
+}
+h1::after {
+  transform: translate3d(5px, 5px, 0);
 }
 h1::before {
-  content: '';
-  width: 95%;
-  height: 95%;
-  border: 2px solid rgba(255,255,255,.8);
-  position: absolute;
-  top: -5px;
-  left: -5px;
+  transform: translate3d(-5px, -5px, 0);
 }
 h1, h1::after, h1::before {
   transition: .3s ease;
@@ -52,8 +50,7 @@ h1, h1::after, h1::before {
 h1:hover:after,
 h1:hover:before {
   border: 2px solid rgba(255,255,255,1);
-  top: 0;
-  left:0;
+  transform: translate3d(0, 0, 0);
 }
 
 h2 {
