@@ -61,7 +61,7 @@ function searchViaCEP() {
       setTimeout(() => {
         resetAdress();
         errorMessage()
-      }, 800) 
+      }, 1000) 
     })
   }
 
