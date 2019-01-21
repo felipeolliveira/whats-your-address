@@ -27,10 +27,6 @@ function handleClick(e) {
   if (e.target === btnSearch) {
     e.preventDefault();
     searchViaCEP();
-    resetAdress();
-    setTimeout(() => {
-      printResult();
-    }, 500);
   }
 }
 
@@ -51,15 +47,13 @@ function searchViaCEP() {
     responseCEP
     .then(r => r.json())
     .then(r => {
-      setTimeout(() => {
-        return resultCEP = r;
-      }, 50)
+      resultCEP = r;
+      resetAdress();
+      printResult();
     })
     .catch(() => {
-      setTimeout(() => {
-        resetAdress();
-        errorMessage()
-      }, 1000) 
+      resetAdress();
+      errorMessage()
     })
   }
 
@@ -74,7 +68,6 @@ function createTitle() {
 
 function printResult() {
   
-  setTimeout(() => {
     createTitle();
 
     if(resultCEP) {
@@ -106,5 +99,4 @@ function printResult() {
       }
     }
 
-  }, 800)
 }
