@@ -109,7 +109,8 @@ form{
   border-radius: 50px;
   font-size: .875rem;
   text-transform: uppercase;
-  margin-top: 25px; 
+  margin-top: 25px;
+  cursor: pointer;
 }
 
 .cep-box button[disabled] {
