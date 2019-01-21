@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800');
+* {
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+body {
+  background: #355C7D;
+  background: -webkit-linear-gradient(to right, #C06C84, #6C5B7B, #355C7D);
+  background: linear-gradient(to right, #C06C84, #6C5B7B, #355C7D);
+
+  height: 100vh;
+  margin: 0;
+  padding: 10px 0 0 0;
+  color: #333;
+}
+
+h1 {
+  font-size: 1.825rem;
+  max-width: 500px;
+  font-weight: 800;
+  color: #fff;
+  text-align: center;
+  margin: 25px auto;
+  padding: 20px 20px;
+  letter-spacing: .2rem;
+  text-transform: uppercase;
+  position: relative;
+}
+
+h1::after {
+  content: '';
+  width: 95%;
+  height: 95%;
+  border: 2px solid rgba(255,255,255,.8);
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+h1::before {
+  content: '';
+  width: 95%;
+  height: 95%;
+  border: 2px solid rgba(255,255,255,.8);
+  position: absolute;
+  top: -5px;
+  left: -5px;
+}
+h1, h1::after, h1::before {
+  transition: .3s ease;
+}
+
+h1:hover:after,
+h1:hover:before {
+  border: 2px solid rgba(255,255,255,1);
+  top: 0;
+  left:0;
+}
+
+h2 {
+  font-size: 1rem;
+  width: 100%;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+form{
+  position: relative;
+}
+
+.cep-box {
+  /* min-width: 320px; */
+  max-width: 500px;
+  background: #fff;
+  padding: 40px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin: 50px auto 20px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,.5)
+}
+
+.cep-box label{
+  display: block;
+  font-weight: 700;
+
+}
+
+.cep-box input{
+  font-size: 1.2rem;
+  display: block;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-top: 10px;
+  border: none;
+  background: #e8e8e8;
+  border-radius: 10px;
+}
+
+.cep-box button {
+  width: 150px;
+  border: none;
+
+  background: #355C7D;
+  background: -webkit-linear-gradient(to right, #C06C84, #6C5B7B, #355C7D);
+  background: linear-gradient(to right, #C06C84, #6C5B7B, #355C7D);
+
+  color: #fff;
+  padding: 15px 20px;
+  border-radius: 50px;
+  font-size: .875rem;
+  text-transform: uppercase;
+  margin-top: 25px; 
+}
+
+.cep-box button[disabled] {
+  background: #555;
+  background: -webkit-linear-gradient(to left, #555, #777, #999);
+  background: linear-gradient(to left, #555, #777, #999);
+}
+
+.cep-box .endereco {
+  display: none;
+  margin-top: 50px;
+  border-top: 4px solid #355C7D;
+  padding-top: 15px;
+}
+
+.cep-box .endereco.ativo {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cep-box .endereco span {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.cep-box .endereco p {
+  margin: 0;
+}
+
+.endereco div[data-resultado] {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  background: blue;
+}
+
+.card-info {
+  width: 46%;
+  padding: .5rem;
+  margin: 0 2% 9%;
+  box-sizing: border-box;
+  border-bottom: 1px solid #355C7D;
+}
+
+.card-info span {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: .6rem;
+}
+
+@media (max-width: 400px) {
+  .cep-box {
+    width: 96%;
+  }
+  .card-info {
+    width: 100%;
+    margin: 0 0 9%;
+  }
+}

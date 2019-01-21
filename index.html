@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Formulário de CEP</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Qual seu endereço?</h1>
+  <div class="cep-box">
+    <form name="formulario-cep">
+      <label for="cep">Digite seu CEP</label>
+      <input type="text" id="cep" name="cep" required placeholder="Coloque seu CEP de oito dígitos">
+      <button data-form="button" name="button" class="disabled" disabled>Pesquisar</button>
+    </form>
+    <div class="endereco"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
