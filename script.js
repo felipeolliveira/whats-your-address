@@ -27,8 +27,8 @@ function handleClick(e) {
   if (e.target === btnSearch) {
     e.preventDefault();
     searchViaCEP();
+    resetAdress();
     setTimeout(() => {
-      resetAdress();
       printResult();
     }, 500);
   }
@@ -47,8 +47,6 @@ function searchViaCEP() {
   
   if(cep) {
     const responseCEP = fetch('https://viacep.com.br/ws/' + cep + '/json/');
-
-    console.log(responseCEP);
 
     responseCEP
     .then(r => r.json())
@@ -77,32 +75,36 @@ function createTitle() {
 function printResult() {
   createTitle();
 
-  if(resultCEP) {
+  setTimeout(() => {
+
+    if(resultCEP) {
+      
+      if (resultCEP['erro']) {
+        errorMessage();
+      } else {
+        const infoCEP = Object.keys(resultCEP);
+        
+        infoCEP.forEach(key => {
+          const divInfo = document.createElement('div');
+          const titulo = document.createElement('span');
+          const texto = document.createElement('p')
+          const value = resultCEP[key];
     
-    if (resultCEP['erro']) {
-      errorMessage();
-    } else {
-      const infoCEP = Object.keys(resultCEP);
-      
-      infoCEP.forEach(key => {
-        const divInfo = document.createElement('div');
-        const titulo = document.createElement('span');
-        const texto = document.createElement('p')
-        const value = resultCEP[key];
-  
-        divInfo.classList.add('card-info')
-  
-        if (value) {
-          titulo.innerText = key + ':';
-          texto.innerText = value
-  
-          divInfo.appendChild(titulo);
-          divInfo.appendChild(texto);
-          divAdress.appendChild(divInfo);
-        }
-      });
-      
-      divAdress.classList.add('ativo');
+          divInfo.classList.add('card-info')
+    
+          if (value) {
+            titulo.innerText = key + ':';
+            texto.innerText = value
+    
+            divInfo.appendChild(titulo);
+            divInfo.appendChild(texto);
+            divAdress.appendChild(divInfo);
+          }
+        });
+        
+        divAdress.classList.add('ativo');
+      }
     }
-  }
+
+  }, 800)
 }
