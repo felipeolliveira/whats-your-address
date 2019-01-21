@@ -73,9 +73,9 @@ function createTitle() {
 }
 
 function printResult() {
-  createTitle();
-
+  
   setTimeout(() => {
+    createTitle();
 
     if(resultCEP) {
       
