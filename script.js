@@ -73,6 +73,7 @@ function createTitle() {
 }
 
 function printResult() {
+  
   setTimeout(() => {
     createTitle();
 
