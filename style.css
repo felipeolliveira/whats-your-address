@@ -116,28 +116,28 @@ form{
   background: linear-gradient(to left, #555, #777, #999);
 }
 
-.cep-box .endereco {
+.cep-box .address {
   display: none;
   margin-top: 50px;
   border-top: 4px solid #355C7D;
   padding-top: 15px;
 }
 
-.cep-box .endereco.ativo {
+.cep-box .address.active {
   display: flex;
   flex-wrap: wrap;
 }
 
-.cep-box .endereco span {
+.cep-box .address span {
   display: block;
   margin-bottom: 10px;
 }
 
-.cep-box .endereco p {
+.cep-box .address p {
   margin: 0;
 }
 
-.endereco div[data-resultado] {
+.address div[data-resultado] {
   position: relative;
   width: 100%;
   height: 100px;
